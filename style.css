@@ -1,0 +1,198 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --verde-principal: #2E7D32; /* Representa o agro e a vegetação */
+    --verde-claro: #A5D6A7;     /* Destaques e hovers */
+    --azul-agua: #0288D1;       /* Representa a proteção dos mananciais */
+    --azul-claro: #E1F5FE;      /* Fundo de seções interativas */
+    --texto-escuro: #263238;    /* Cor para leitura confortável */
+    --branco: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--texto-escuro);
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    padding: 1rem 2rem;
+    position: sticky; /* O menu fica fixo no topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.logo span {
+    color: var(--verde-claro);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--verde-claro); /* Efeito visual ao passar o mouse */
+}
+
+/* ==========================================================================
+   BANNER PRINCIPAL (HERO)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* ==========================================================================
+   LAYOUT E SEÇÕES DE CONTEÚDO
+   ========================================================================== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2.titulo-secao {
+    color: var(--verde-principal);
+    border-bottom: 3px solid var(--azul-agua); /* Linha azul destacando a água */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Lista estilizada para a área de equilíbrio */
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   CARDS (Grade de Proteção de Mananciais)
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--azul-agua); /* Detalhe em azul */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* O card "sobe" de leve ao passar o mouse */
+}
+
+.card h3 {
+    color: var(--verde-principal);
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   SEÇÃO INTERATIVA (JAVASCRIPT)
+   ========================================================================== */
+.interativo {
+    background-color: var(--azul-claro);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.btn-acao {
+    background-color: var(--azul-agua);
+    color: var(--branco);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-acao:hover {
+    background-color: #0277BD;
+}
+
+#caixa-dica {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--texto-escuro);
+    min-height: 50px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+footer {
+    background-color: var(--texto-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
